@@ -16,20 +16,20 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 
 public class Announcement {
-    private Stage announcement = new Stage();
-    private Scene scene =  new Scene(new Pane(),280,200);
-    private Label text= new Label();
-    private Button bottomYes = new Button("OK");
-    public Announcement() {
-        announcement.setResizable(false);
-        announcement.initStyle(StageStyle.UNDECORATED);
-        announcement.initModality(Modality.APPLICATION_MODAL);
-        announcement.setX(Player.x);announcement.setY(Player.y);
-        announcement.setScene(scene);
-    }
-    public void display(String s) {
-        bottomYes.setOnAction(event -> announcement.close());text.setText(s);
-        scene.setRoot(new StackPane(new VBox(new StackPane(text),new StackPane(bottomYes))));
-        announcement.showAndWait();
-    }
+  private Stage announcement = new Stage();
+  private Scene scene =  new Scene(new Pane(),280,200);
+  private Label text= new Label();
+  private Button bottomYes = new Button("OK");
+  public Announcement() {
+    announcement.setResizable(false);
+    announcement.initStyle(StageStyle.UNDECORATED);
+    announcement.initModality(Modality.APPLICATION_MODAL);
+    announcement.setX(Player.x);announcement.setY(Player.y);
+    announcement.setScene(scene);
+  }
+  public void display(String s) {
+    bottomYes.setOnAction(event -> announcement.close());text.setText(s);
+    scene.setRoot(new StackPane(new VBox(new StackPane(text),new StackPane(bottomYes))));
+    announcement.showAndWait();
+  }
 }
